@@ -1,24 +1,25 @@
 function phase_mask = laguerre_gauss_phase_mask(sz, amode, rmode, varargin)
-    % Description:
-    % Generates a phase mask for a Gauss-Laguerre (LG) beam.
-    % Option:
-    %   'radius': Scaling factor for radial mode rings. Default is min(sz)/10.
-    % Usage example:
-    % phase_mask = generate_lg_phase_mask(sz, amode, rmode);
+    % Generates the phase patterns for Laguerre-Gaussian beams
+    % Parameters
+    %   - sz -- size of the pattern [rows, cols]
+    %   - amode -- azimuthal mode order
+    %   - rmode -- radial mode orders 
+    % Usage
+    %   pattern = laguerre_gauss_phase_mask(sz, amode, rmode,...);
     %
-    % Check mode numbers
-    assert(rmode >= 0, 'The radial mode order must be >= 0');
-    assert(floor(rmode) == rmode, 'The radial mode order must be an integer');
-    assert(floor(amode) == amode, 'The azimuthal mode order must be an integer');
+    % Optional named parameters:
+    %   - 'scale'       scale  -- radial scaling factor for pattern
+    %   - 'centre'      [x, y] -- centre location for lens (default: sz/2)
+    %   - 'offset'      [x, y] -- offset after applying transformations
+    %   - 'aspect'      aspect -- aspect ratio of lens (default: 1.0)
+    %   - 'angle'       angle  -- Rotation angle about axis (radians)
 
-    % Parse the input parameters
+    % Set parameters
     p = inputParser;
-    setDefaultGridParameters(p,sz);  
+    setParameters(p,sz);  
     p.addParameter('radius', min(sz)/10);
-    p.addParameter('p0', 1.0);
     p.parse(varargin{:});
 
-    % Obtain parser parameters
     c = p.Results.centre;
     ofs = p.Results.offset;
     asp = p.Results.aspect;
