@@ -22,10 +22,11 @@ Beam generation with OAM:
     Holographic gratings
     Metamaterials
     Liquid crystal q-plates
+    fiber
     Spatial light modulators (SLMs)
     advantages, disadvantages and limitations solutions:
-        GS 
-        ANN
+        GS
+        ANN(?)
 
 Setup and the GUI:
 
