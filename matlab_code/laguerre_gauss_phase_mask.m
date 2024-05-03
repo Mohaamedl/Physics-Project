@@ -13,32 +13,45 @@ function phase_mask = laguerre_gauss_phase_mask(sz, amode, rmode, varargin)
     %   - 'offset'      [x, y] -- offset after applying transformations
     %   - 'aspect'      aspect -- aspect ratio of lens (default: 1.0)
     %   - 'angle'       angle  -- Rotation angle about axis (radians)
+    %   - 'range'       [min_val, max_val] -- Range of phase values
 
     % Set parameters
     p = inputParser;
-    setParameters(p,sz);  
+    setParameters(p, sz);  
     p.addParameter('radius', min(sz)/10);
+    p.addParameter('range', [0, 2*pi]); % Default range
     p.parse(varargin{:});
 
     c = p.Results.centre;
     ofs = p.Results.offset;
     asp = p.Results.aspect;
     ang = p.Results.angle;
+    range = p.Results.range;
     
     % Generate coordinates
     [xx, yy] = grid2D(sz, 'centre', c, 'offset', ofs, ...
-        'aspect', asp, 'angle',ang);
+        'aspect', asp, 'angle', ang);
 
     % Calculate the azimuthal part of the pattern
-    phase = amode .* atan2(yy, xx);
+    phase_azimuthal = amode .* atan2(yy, xx);
 
     % Calculate the Laguerre polynomials in the radial direction
     rho = sqrt(xx.^2 + yy.^2);
     Lpoly_rho = fastLaguerre(rmode, abs(amode), (rho./p.Results.radius).^2);
 
     % Calculate the radial part of the phase
-    phase = phase + (sign(Lpoly_rho)>0)*pi;
+    phase_radial = (sign(Lpoly_rho) > 0) * pi;
 
-    phase_mask = mod(phase, 2*pi);
+    % Sum azimuthal and radial phases
+    phase = phase_azimuthal + phase_radial;
+
+    % Calculate the phase range
+    phase_range = range(2) - range(1);
+
+    % Normalize phase to the specified range
+    phase_diff = range(1) - min(phase(:));
+    phase_mask = phase + phase_diff;
     
+    % Ensure phase is within the specified range
+    phase_mask = mod(phase_mask - range(1), phase_range) + range(1);
 end

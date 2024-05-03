@@ -17,6 +17,7 @@ function pattern = bessel_gauss_phase_mask(sz, mode, varargin)
     p = inputParser;
     setParameters(p, sz);
     p.addParameter('scale', sqrt(sz(1)^2 + sz(2)^2)/100);
+    p.addParameter('range', [0 2*pi]);
     p.parse(varargin{:});
 
 
@@ -24,7 +25,7 @@ function pattern = bessel_gauss_phase_mask(sz, mode, varargin)
     ofs = p.Results.offset;
     asp = p.Results.aspect;
     ang = p.Results.angle;
-    
+    range = p.Results.range;
     % Generate coordinates
     [xx,yy] = grid2D(sz, 'centre', c, 'offset', ofs, ...
             'angle', ang, 'aspect', asp );
@@ -37,7 +38,14 @@ function pattern = bessel_gauss_phase_mask(sz, mode, varargin)
     amplitude = besselj(mode, r);
     
     % Calculate the phase
-    pattern = angle(amplitude .* exp(-1i*mode*phi+pi));
+    pattern = angle(amplitude .* exp(-1i*mode*phi+pi)) + pi;
+    phase = mod(pattern+pi,2*pi);
+    phase_range = range(2) - range(1);
+
+    % Normalize phase to the specified range
+    phase_diff = range(1) - min(phase(:));
+    phase_mask = phase + phase_diff;
     
-    pattern = mod(pattern+pi,2*pi);
+    % Ensure phase is within the specified range
+    pattern = mod(phase_mask - range(1), phase_range) + range(1);
 end

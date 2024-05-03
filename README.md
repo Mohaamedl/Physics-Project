@@ -9,11 +9,10 @@ Introduction:
     and work structure
 Theoretical foundation:
     Introduction to the physics of a Gaussian beam (incident beam) and the possible resulting beams:
-      Bessel (concept, application, advantages and disadvantages)
       Bessel-Gauss "
       Laguerre-Gauss "
       Hermite-Gauss "
-      OAM. " more extensive explanation
+      OAM. " more extensive explanation 
     
 Beam generation with OAM:
     Optical beam generation techniques loaded with OAM :
@@ -21,19 +20,22 @@ Beam generation with OAM:
     Spiral phase plates
     Holographic gratings
     Metamaterials
-    Liquid crystal q-plates
     fiber
+    Liquid crystal q-plates
     Spatial light modulators (SLMs)
     advantages, disadvantages and limitations solutions:
         GS
         ANN(?)
 
 Setup and the GUI:
+    
 
 Results:
+    results of bg,hg and lg masks, results of oam with/without grating mask,
+    theoretical results 
 
 Conclusion:
-
+    ....
  
  
 
