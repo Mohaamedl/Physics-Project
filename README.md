@@ -8,11 +8,11 @@ Introduction:
     Objectives of the work
     and work structure
 Theoretical foundation:
-    Introduction to the physics of a Gaussian beam (incident beam) and the possible resulting beams:
-      Bessel-Gauss "
-      Laguerre-Gauss "
-      Hermite-Gauss "
-      OAM. " more extensive explanation 
+    Introduction to the physics of a Gaussian beam (incident beam) and the possible resulting beams: done
+      Bessel-Gauss " done
+      Laguerre-Gauss " done
+      Hermite-Gauss " done
+      OAM. " 
     
 Beam generation with OAM:
     Optical beam generation techniques loaded with OAM :

@@ -63,7 +63,7 @@ plot(xc, yc, 'r+', 'LineWidth', 4)
             
 %Crop 
 img=imcrop(img,[xc yc side side]); 
-minSize = 6000;
+minSize = 30;
 img = imbinarize(img);
 img = bwareaopen(img,minSize);
 figure(3)
@@ -72,8 +72,8 @@ imshow(img)
 %%
 %preparing for GS
 s = max(size(img));
-img = ((img - min(img(:))) /(max(img(:)) - min(img(:)))) * 1;
-amp = aperture(ones(s,s),side,s,s);
+img = ((img - min(img(:))) /(max(img(:)) - min(img(:)))) * 2*pi;
+amp = aperture(ones(s,s),4*side/5,s,s);
 figure(4)
 imshow(amp)
     
@@ -84,27 +84,27 @@ mask = spiral_mask(s,s,1);
 A = mask;
 %A = zeros(s,s);
 figure(5)
-imshow(A,[0 2*pi])
+imagesc(A,[0 2*pi])
 
 
 
 source= im2double( img);
 % 
 % A = fftshift(ifft2(fftshift(source)));
-iterations = 20;
+iterations = 10;
 for It=1:1:iterations
     
     % img plane
     B = amp.*exp(1i.*A);
-    BFT = fftshift(fft2(B));
+    BFT = fftshift(fft2(fftshift(B)));
     % s = fftshift(fft2(source));
     % FT plane
     A = angle(BFT)+pi;
     
     C = source.*exp(1i.*A);
-    C = ifft2(ifftshift(C));
+    C2 = ifftshift(ifft2(ifftshift(C)));
     % img plane
-    A = angle(C)+pi;
+    A = angle(C2)+pi;
 
 
     % B = abs(ring) .* exp(1i*angle(A));
@@ -115,9 +115,11 @@ for It=1:1:iterations
 
 end
 
-D = mod(A-mask,2*pi);
+D =angle(exp(1i*A-1i*mask));
+
+
 figure(6)
-imshow(D, [0  2*pi])
+imagesc(D)
 
 
 

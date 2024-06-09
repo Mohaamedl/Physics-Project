@@ -16,7 +16,7 @@ r = sqrt(X.^2 + Y.^2);
 U0 = exp(-(r/w0).^2);
 
 % Máscara de fase espiral (OAM de 1)
-l = 2; % ordem do OAM
+l = 10; % ordem do OAM
 phi = atan2(Y, X); % ângulo azimutal
 spiral_phase_mask = exp(1i * l * phi);
 
@@ -38,3 +38,28 @@ title('Intensidade do Feixe Gaussiano Após Máscara de Fase Espiral');
 xlabel('x (m)');
 ylabel('y (m)');
 axis square;
+
+
+figure(2)
+a = simularSLM(Phase,E0);
+imagesc(a)
+
+function resultado = simularSLM(mascara_fase, feixe_gaussiano)
+    % Simular o resultado de um SLM com uma máscara de fase dada e um feixe gaussiano incidente
+    
+    % Definir parâmetros do feixe gaussiano
+    tamanho = size(mascara_fase);
+    [X, Y] = meshgrid(1:tamanho(2), 1:tamanho(1));
+    centro_x = tamanho(2) / 2;
+    centro_y = tamanho(1) / 2;
+    desvio_padrao = 50; % Ajuste o desvio padrão conforme necessário
+    
+    % Calcular o perfil do feixe gaussiano
+    perfil_gaussiano = exp(-((X - centro_x).^2 + (Y - centro_y).^2) / (2 * desvio_padrao^2));
+    
+    % Aplicar a máscara de fase ao feixe gaussiano
+    feixe_modulado = perfil_gaussiano .* exp(1i .* mascara_fase);
+    
+    % Calcular o resultado da simulação
+    resultado = abs(ifft2(fftshift(fft2(feixe_modulado)))).^2;
+end
