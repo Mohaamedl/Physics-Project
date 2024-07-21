@@ -18,20 +18,17 @@ Beam generation with OAM:
     Optical beam generation techniques loaded with OAM :
     Cylindrical lenses 
     Spiral phase plates
-    Holographic gratings
-    Metamaterials
     fiber
     Liquid crystal q-plates
     Spatial light modulators (SLMs)
     advantages, disadvantages and limitations solutions:
-        GS
-        ANN(?)
+        forked masks
 
 Setup and the GUI:
     
 
 Results:
-    results of bg,hg and lg masks, results of oam with/without grating mask,
+    results of bg,hg and lg masks, results of oam with/without grating forked mask,
     theoretical results 
 
 Conclusion:
