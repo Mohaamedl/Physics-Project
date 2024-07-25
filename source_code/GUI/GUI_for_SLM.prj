@@ -1,0 +1,77 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="4257677221" file="C:\Users\moham\Desktop\Physics-Project\source_code\GUI\GUI_for_SLM.prj" location="C:\Users\moham\Desktop\Physics-Project\source_code\GUI" name="GUI_for_SLM" target="target.mlapps" target-name="Package App">
+    <param.appname>GUI_for_SLM</param.appname>
+    <param.authnamewatermark>Mohamed Haddadi</param.authnamewatermark>
+    <param.email>mohamedhaddadi@ua.pt</param.email>
+    <param.company>University of Aveiro</param.company>
+    <param.icon />
+    <param.icons />
+    <param.summary>GUI for techniques to manipulate light</param.summary>
+    <param.description />
+    <param.screenshot>C:\Users\moham\AppData\Local\Temp\tp33a9b0ed_2a62_47ee_bf99_65718232ecdd.png</param.screenshot>
+    <param.version>1.0</param.version>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.output>${PROJECT_ROOT}</param.output>
+    <param.guid>fbd8a5a3-7501-480b-ae3d-badce8411008</param.guid>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.description />
+      <param.version />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\GUI_for_SLM.mlapp</file>
+    </fileset.main>
+    <fileset.depfun />
+    <fileset.resources>
+      <file>${PROJECT_ROOT}\bessel_0.bmp</file>
+      <file>${PROJECT_ROOT}\hermite_1_1.bmp</file>
+      <file>${PROJECT_ROOT}\HG_2_2.bmp</file>
+      <file>${PROJECT_ROOT}\HG_4_4.bmp</file>
+      <file>${PROJECT_ROOT}\LG_1_0.bmp</file>
+      <file>${PROJECT_ROOT}\LG_2_0.bmp</file>
+      <file>${PROJECT_ROOT}\phase.bmp</file>
+      <file>${PROJECT_ROOT}\phasev.bmp</file>
+      <file>${PROJECT_ROOT}\reconstructed_phase_mask_gs.png</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\Users\moham\Desktop\Physics-Project\source_code" name="GUI" optional="false">C:\Users\moham\Desktop\Physics-Project\source_code\GUI</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2023b</root>
+      <toolboxes>
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
