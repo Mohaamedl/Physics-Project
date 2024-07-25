@@ -47,5 +47,5 @@ For any improvements or suggestions, please feel free to create a pull request o
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file in the parent directory for more details.
+This project is licensed under the MIT License. See the [LICENSE](../../LICENSE) file in the parent directory for more details.
 

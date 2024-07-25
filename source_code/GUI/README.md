@@ -59,7 +59,7 @@ For improvements or suggestions, please create a pull request or open an issue.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file in the parent directory for more details.
+This project is licensed under the MIT License. See the [LICENSE](../../LICENSE) file in the parent directory for more details.
 
 ## Acknowledgements
 
