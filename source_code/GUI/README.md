@@ -13,6 +13,7 @@ The GUI has been specifically designed to enhance the intuitive and convenient m
 <p align="center">
   <img src="image-5.png" alt="Alignment and Light Modulation" width="80%" />
 </p>
+
 - **Initial Setup**: The GUI starts on the Alignment tab, essential for effective wavefront modulation. Proper alignment in both horizontal and vertical directions is crucial to ensure correct wavefront modulation.
 - **Alignment Procedure**:
   - Select the alignment direction as shown in the GUI.
