@@ -44,6 +44,15 @@ Ensure the incident beam is polarized to align with the liquid crystal’s optic
   - Save images of the results if desired.
 - **Custom Masks**: Use the External Masks tab to upload and preview custom phase mask designs. Apply these masks to the SLM in a manner similar to other beam types.
 
+### Demo Video without SLM connection
+
+
+<div style="text-align: center;">
+  <video width="640" height="480" controls style="border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <source src="GUI_demo.mp4" type="video/mp4">
+    Seu navegador não suporta o elemento de vídeo.
+  </video>
+</div>
 
 ## Installation
 

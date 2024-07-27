@@ -33,7 +33,7 @@ This study explores the generation and analysis of structured light beams, with 
 
 Each subfolder within `source_code` contains its own `README.md` file for detailed information on its contents and usage. Please refer to these files for more specific instructions.
 
-## Installation and Usage
+## GUI Installation and Usage
 
 1. **Installation**: Follow the instructions in the respective `README.md` files within the `source_code` folder for installation and usage details of the scripts and GUI.
 
@@ -45,8 +45,9 @@ For improvements or suggestions, please create a pull request or open an issue.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file in the parent directory for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
 
-Enjoy exploring the structured light generation and analysis!
+
+Enjoy exploring the structured light generation!
