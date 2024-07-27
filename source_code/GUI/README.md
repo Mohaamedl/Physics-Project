@@ -47,11 +47,12 @@ Ensure the incident beam is polarized to align with the liquid crystal’s optic
 ### Demo Video without SLM connection
 
 
-<div style="text-align: center;">
-  <video width="640" height="480" controls style="border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-    <source src="GUI_demo.mp4" type="video/mp4">
-    Seu navegador não suporta o elemento de vídeo.
-  </video>
+Check out the demo video for the SLM GUI:
+
+<div align="center">
+  <a href="https://youtu.be/8PuDfqlTOHI">
+    <img src="https://img.youtube.com/vi/8PuDfqlTOHI/hqdefault.jpg" alt="Demo Video" style="border: 2px solid #ddd; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);" />
+  </a>
 </div>
 
 ## Installation
